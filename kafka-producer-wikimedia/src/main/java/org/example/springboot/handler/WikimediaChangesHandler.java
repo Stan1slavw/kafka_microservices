@@ -1,11 +1,11 @@
-package org.example.springboot;
+package org.example.springboot.handler;
 
+import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.MessageEvent;
-import com.launchdarkly.eventsource.background.BackgroundEventHandler;
 import org.slf4j.Logger;
 import org.springframework.kafka.core.KafkaTemplate;
 
-public class WikimediaChangesHandler implements BackgroundEventHandler {
+public class WikimediaChangesHandler implements EventHandler {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
     private String topic;
